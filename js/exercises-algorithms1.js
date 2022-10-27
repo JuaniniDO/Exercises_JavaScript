@@ -145,7 +145,7 @@ switch (divisa) {
 } */
 
 //Ejercicio 8
-let num1 = parseFloat(prompt("Introduzca primer numero"));
+/* let num1 = parseFloat(prompt("Introduzca primer numero"));
 let num2 = parseFloat(prompt("Introduzca segundo numero"));
 let operador = prompt(
   "Introduzca operación a realizar (sumar, restar, multi, dividir)"
@@ -160,3 +160,73 @@ if (operador == "sumar") {
 } else {
   console.log(num1 / num2);
 }
+//Ejercicio 9
+// Pedirle a usuario que indique su  documento
+let doc = prompt("Enter your DNI or NIE").toLowerCase();
+// centinela que nos informa si es o no un DNI
+let isDNI = true;
+// centinela que registra si es o no un documento válido
+let validDocument = true;
+// Comprobamos si se trata de un NIE
+if (doc.charCodeAt(0) == 116 || doc.charCodeAt(0) == 120) {
+  // si empieza por t o x, no es un DNI
+  isDNI = false;
+}
+// En el caso de que sea un DNI, comprobamos su validez
+if (isDNI) {
+  // Este bucle va a repetirse tantas veces como letras tenga el string
+  for (let index = 0; index < doc.length; index++) {
+    // si estamos comprobando los 8 primeros elementos
+    if (index <= 7) {
+      // Buscamos que sean números
+      if (doc.charCodeAt(index) < 48 || doc.charCodeAt(index) > 57) {
+        // si alguno no lo fuera, marcamos el documento como no válido
+        validDocument = false;
+      }
+      // aquí comprobamos la letra
+    } else {
+      // si no coincide con el rango de minúsculas
+      if (doc.charCodeAt(index) < 97 || doc.charCodeAt(index) > 122) {
+        // marcamos el documento como no válido
+        validDocument = false;
+      }
+    }
+  }
+  // si llega aquí, es por que se trata de un NIE
+} else {
+  // empezamos en el segundo elemento, por que ya hemos comprobado el primero
+  for (let index = 1; index < doc.length; index++) {
+    // comprobamos la parte numérica
+    if (index <= 7) {
+      if (doc.charCodeAt(index) < 48 || doc.charCodeAt(index) > 57) {
+        validDocument = false;
+      }
+      // aquí se comprueba la letra del final
+    } else {
+      if (doc.charCodeAt(index) < 97 || doc.charCodeAt(index) > 122) {
+        validDocument = false;
+      }
+    }
+  }
+}
+// si en este punto es un documento válido
+// y es un DNI
+if (validDocument && isDNI) {
+  // lo confirmamos desde consola
+  console.log("It is a valid DNI");
+  //si llega aquí es por que el documento es válido
+  // pero se trata de un NIE
+} else if (validDocument) {
+  console.log("It is a valid NIE");
+  // si llega aquí, es que no es un documento válido
+} else {
+  console.log("not a valid document");
+} */
+
+//Ejercicio 10
+/* let min = 1;
+let max = 6;
+let player1 = Math.floor(Math.random() * (max - min + 1) ) + min;
+let player2 = Math.floor(Math.random() * (max - min + 1) ) + min;
+ */
+//hora video 3:25s

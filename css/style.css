@@ -10,7 +10,7 @@
   --teal: #20c997;
   --cyan: #0dcaf0;
   --black: #000;
-  box-sizing: border-box;
+ 
 }
 *,
 ::before,
@@ -18,5 +18,6 @@
   margin: 0;
   padding: 0;
   border: 0;
-  box-sizing: inherit;
+  box-sizing: border-box;
+  outline: 0 none;
 }
