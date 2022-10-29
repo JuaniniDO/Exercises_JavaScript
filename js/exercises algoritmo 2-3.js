@@ -64,7 +64,7 @@ exercise4(temperature); */
 exercise31();  */
 
 //Ejercicio 2
-function addZero(time){
+/* function addZero(time){
   if(time < 10){
     return '0'+time;
   }
@@ -84,4 +84,114 @@ function dayGreeting() {
     alert("Good Evening " + name+ "!");
   }
 };
-dayGreeting()
+dayGreeting(); */
+
+//Ejercicio 3
+/* function colorRandom() {
+let hexadecimal = "";
+let message = "Hello World!";
+for (let i = 0; i < 10; i++) {
+  let colorRandom = ;
+  
+} */
+  
+
+/* function getRandomColor() {
+  let colores = [];
+  let num=(Math.floor(Math.random()*10).toString(10));
+  let letters = ['0','F',num];
+  let color = '#';
+  
+  for (let i = 0; i < 10; i++ ) {
+      let pos=Math.floor(Math.random() * letters.length);
+      color += letters[pos];
+      letters.splice(pos,1);
+  }
+  
+  //para evitar que se repitan colores 
+  if(colores.includes(color))
+    return getRandomColor();
+  else
+    colores.push(color)
+   return color;
+} 
+getRandomColor() */
+let ex3Alg3 = function () {
+  const hello = "Hello world";
+  let colors = [];
+
+  for (let index = 0; index < 10; index++) {
+    function colorGenerator() {
+      //Generate random hex code
+      let color =
+        "#" +
+        Math.floor(Math.random() * 2 ** 24)
+          .toString(16) //Hex code with 16 characters
+          .padStart(0, 6); //Take only first 6  characters
+      return color;
+    }
+    let randomColor = colorGenerator();
+    do {
+      //Exclude repetition
+      randomColor = colorGenerator();
+    } while (colors.includes(randomColor));
+    colors[index] = randomColor;
+  }
+
+  for (let i = 0; i < colors.length; i++) {
+    console.log(`HEX-CODE:${colors[i]}`);
+    console.log(
+      `%c ${hello} `,
+      `font-weight:bold; font-size: 20px;color: ${colors[i]}`
+    );
+  }
+};
+
+//ex3Alg3();
+//Objeto con los hexadecimales
+let hexa = {
+  0: "0",
+  1: "1",
+  2: "2",
+  3: "3",
+  4: "4",
+  5: "5",
+  6: "6",
+  7: "7",
+  8: "8",
+  9: "9",
+  10: "A",
+  11: "B",
+  12: "C",
+  13: "D",
+  14: "E",
+  15: "F",
+};
+
+
+// array de 10 posiciones para guardar los códigos hexadecimales
+let randomHexaCollection = [];
+// string para guardar el código hexadecimal
+let randomHexa = "#";
+
+// función que genera un número aleatorio entre 0 y 15 y te lo devuelve
+let random =  () => {
+  return Math.floor(Math.random() * 16);
+};
+
+
+// Bucla que genera 10 códigos hexadecimales aleatorios y los guarda en el array
+for(let i = 0; i < 10; i++){
+  randomHexa = "#";
+  for(let j = 0; j < 6; j++){
+    randomHexa += hexa[random()];
+  }
+  randomHexaCollection.push(randomHexa);
+}
+
+// bucle que recorre el array y escribe en la consola "Hello world! del color aleatorio generado"
+for(let i = 0; i < randomHexaCollection.length; i++){
+  console.log(randomHexaCollection[i]);
+  console.log("%cHello World" , `color:${randomHexaCollection[i]}`);
+};
+
