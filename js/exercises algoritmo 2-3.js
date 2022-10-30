@@ -87,69 +87,8 @@ function dayGreeting() {
 dayGreeting(); */
 
 //Ejercicio 3
-/* function colorRandom() {
-let hexadecimal = "";
-let message = "Hello World!";
-for (let i = 0; i < 10; i++) {
-  let colorRandom = ;
-  
-} */
-  
-
-/* function getRandomColor() {
-  let colores = [];
-  let num=(Math.floor(Math.random()*10).toString(10));
-  let letters = ['0','F',num];
-  let color = '#';
-  
-  for (let i = 0; i < 10; i++ ) {
-      let pos=Math.floor(Math.random() * letters.length);
-      color += letters[pos];
-      letters.splice(pos,1);
-  }
-  
-  //para evitar que se repitan colores 
-  if(colores.includes(color))
-    return getRandomColor();
-  else
-    colores.push(color)
-   return color;
-} 
-getRandomColor() */
-let ex3Alg3 = function () {
-  const hello = "Hello world";
-  let colors = [];
-
-  for (let index = 0; index < 10; index++) {
-    function colorGenerator() {
-      //Generate random hex code
-      let color =
-        "#" +
-        Math.floor(Math.random() * 2 ** 24)
-          .toString(16) //Hex code with 16 characters
-          .padStart(0, 6); //Take only first 6  characters
-      return color;
-    }
-    let randomColor = colorGenerator();
-    do {
-      //Exclude repetition
-      randomColor = colorGenerator();
-    } while (colors.includes(randomColor));
-    colors[index] = randomColor;
-  }
-
-  for (let i = 0; i < colors.length; i++) {
-    console.log(`HEX-CODE:${colors[i]}`);
-    console.log(
-      `%c ${hello} `,
-      `font-weight:bold; font-size: 20px;color: ${colors[i]}`
-    );
-  }
-};
-
-//ex3Alg3();
 //Objeto con los hexadecimales
-let hexa = {
+/* let hexa = {
   0: "0",
   1: "1",
   2: "2",
@@ -168,30 +107,105 @@ let hexa = {
   15: "F",
 };
 
-
 // array de 10 posiciones para guardar los códigos hexadecimales
 let randomHexaCollection = [];
 // string para guardar el código hexadecimal
 let randomHexa = "#";
 
 // función que genera un número aleatorio entre 0 y 15 y te lo devuelve
-let random =  () => {
+let random = () => {
   return Math.floor(Math.random() * 16);
 };
 
-
-// Bucla que genera 10 códigos hexadecimales aleatorios y los guarda en el array
-for(let i = 0; i < 10; i++){
+// Bucle que genera 10 códigos hexadecimales aleatorios y los guarda en el array
+for (let i = 0; i < 10; i++) {
   randomHexa = "#";
-  for(let j = 0; j < 6; j++){
+  for (let j = 0; j < 6; j++) {
     randomHexa += hexa[random()];
   }
   randomHexaCollection.push(randomHexa);
 }
 
 // bucle que recorre el array y escribe en la consola "Hello world! del color aleatorio generado"
-for(let i = 0; i < randomHexaCollection.length; i++){
+for (let i = 0; i < randomHexaCollection.length; i++) {
   console.log(randomHexaCollection[i]);
-  console.log("%cHello World" , `color:${randomHexaCollection[i]}`);
-};
+  console.log("%cHello World", `color:${randomHexaCollection[i]}`);
+} */
 
+/* //Ejercicio 6
+function exerciese36() {
+let phrases = [
+    "En los bares, algunas veces la gente dice cosas, y otras veces es el whisky hablando. Es difícil discernir quién habla.",
+    "Odiamos a la gente, y a cambio ellos nos odian y nos temen.",
+    "Las mentiras se esparcen más rápido que la verdad.",
+    "¿Qué te hizo pensar que me iría a la cama contigo después de un whisky y una conversación ligera?",
+    "De todos modos, somos Peaky Blinders.",
+    "En los bares, algunas veces la gente dice cosas, y otras veces es el whisky hablando. Es difícil discernir quién habla.",
+    "Para asegurarte de que tu perro te obedece, debes mostrarle el palo de vez en cuando.",
+    "No hay descanso para mí en este mundo. Tal vez en el siguiente.",
+    "Nadie trabaja conmigo. La gente trabaja para mí.",
+    "Cuando ya estás muerto, eres libre. ",
+    "Como un hombre honorable, no como un jodido ciudadano que no comprende la retorcida manera en la que funciona nuestro mundo, amigo.",
+    "Un buen hombre a veces necesita aguantarse.",
+    "Tienes que ser tan malo como los de arriba para sobrevivir. ",
+    "No te metas con los Peaky Blinders.",
+    "Uno ataca cuando el enemigo está débil.",
+    "Conozco caminos de regreso que tardan una eternidad.",
+    "Puedes cambiar lo que haces, pero no puedes cambiar lo que quieres.",
+    "Sólo hay una cosa que puede cegar a un hombre tan inteligente como tú, Tommy. El amor.",
+    "Por orden de los putos Peaky Blinders.",
+    "Si te disculpas una vez, lo harás una y otra vez. Es como quitarle ladrillos a la pared de tu jodida casa.",
+  ];
+  function randomPhrases() {
+  let random = Math.floor(Math.random() * 20);
+    console.log(phrases[random]);
+  }  
+  let time = setInterval (randomPhrases, 10000);
+  setTimeout(() => {
+    clearInterval(time)
+  }, 120000);
+}
+exerciese36 ();  */
+
+//Ejercicio 7: Escribe un programa que genera 100 números aleatorios, entre 0 y 500, y los almacena en un array.
+//A continuación filtra todos los números impares, ordenando los pares de mayor a menor.
+function exercise37() {
+  let numb = [];
+  let min = 0;
+  let max = 500;
+
+  for (let i = 0; i < 100; i++) {
+    numb.push(Math.floor(Math.random() * (max - min) + min));
+  }
+  console.log(numb);
+  let pares = numb.filter((x) => x % 2 == 0);
+  let counter = 0;
+  pares.sort(function (value1, value2) {
+    counter++;
+    return value2 - value1;
+  });
+  console.log(`Los numeros pares son: ${pares}`);
+}
+exercise37();
+
+/* function ejercicio7_3() {
+  let min = 0;
+  let max = 500;
+  let setNumber = [];
+  let number = Math.floor(Math.random() * (max - min)) + min;
+  for (let i = 0; i < 100; i++) {
+    setNumber.push(Math.floor(Math.random() * (max - min)) + min);
+  }
+
+  console.log(setNumber);
+
+  let pares = setNumber.filter((x) => x % 2 == 0);
+
+  let counter = 0;
+  pares.sort(function (value1, value2) {
+    counter++;
+    return value2 - value1;
+  });
+  console.log(`Los números pares son: ${pares}`);
+}
+ejercicio7_3() */
