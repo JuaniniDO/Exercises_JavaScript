@@ -38,6 +38,36 @@ console.log("La temperatura media fue de: " + temperatureAverage);
 
 exercise4(temperature); */
 
+//Ejercicio 8: Investigando como obtener caracteres a partir de valores ASCII, vamos a crear un generador de
+//contraseñas.
+//En primer lugar, pregunta al usuario cuantos caracteres tendrá la contraseña deseada, (mínimo 8 y
+//máximo 16).
+//A continuación, pregunta si quiere incluir, paso a paso, cada uno de los siguientes caracteres:
+//minúsculas, mayúsculas, números y símbolos.
+//JavaScript – Ejercicios – Desarrollando algoritmos 2
+//En caso de que el usuario diga que no a las 4 posibilidades, la contraseña estará hecha en
+//minúsculas.
+//Cada carácter será generado con la siguiente fórmula:
+//• Math.floor(Math.random() * (max + min + 1) + min;
+//En una función que devuelva números enteros aleatorios, y reciba 2 parámetros.
+//La contraseña generada debe ser mostrada con alert().
+
+let numeros = "0123456789";
+let letras = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+let simbolos = "!# $ % & ' ( ) * + , - . / : ; < = > ? @ [  ] ^ _` { | } ~";
+let todo = numeros + letras + simbolos;
+let max = 16;
+let min = 8;
+let userPassword = prompt("How many characters will the password have? Must contain 8 as minimun and 16 as maximun. ")
+const generatePassword = (longitud) => {
+  let password = "";
+  for (let i = 0;i>=8, i < 16; i++) {
+    let aleatorio = Math.floor(Math.random() * (max + min + 1) + min);
+    password += todo.charAt(aleatorio);
+  }
+  return password;
+};
+console.log(generatePassword(8,16));
 // Ejercicios logaritmo 3
 //Ejercicio 1
 /* function exercise31() {
@@ -132,6 +162,12 @@ for (let i = 0; i < randomHexaCollection.length; i++) {
   console.log("%cHello World", `color:${randomHexaCollection[i]}`);
 } */
 
+//Ejercicio 4 Para verificar el DNI, se divide el número entre 23 y el resto se sustituye por una letra que se
+//determina por la siguiente tabla:
+//Escribe un programa que almacena un DNI dado por el usuario, y verifica si es un DNI válido,
+//lanzando una alerta “Valid DNI” o “The data entered is wrong”.
+//** Bonus: añade un programa que genera DNI válidos aleatorios. **
+
 /* //Ejercicio 6
 function exerciese36() {
 let phrases = [
@@ -169,7 +205,7 @@ exerciese36 ();  */
 
 //Ejercicio 7: Escribe un programa que genera 100 números aleatorios, entre 0 y 500, y los almacena en un array.
 //A continuación filtra todos los números impares, ordenando los pares de mayor a menor.
-function exercise37() {
+/* function exercise37() {
   let numb = [];
   let min = 0;
   let max = 500;
@@ -187,25 +223,4 @@ function exercise37() {
   console.log(`Los numeros pares son: ${pares}`);
 }
 exercise37();
-
-/* function ejercicio7_3() {
-  let min = 0;
-  let max = 500;
-  let setNumber = [];
-  let number = Math.floor(Math.random() * (max - min)) + min;
-  for (let i = 0; i < 100; i++) {
-    setNumber.push(Math.floor(Math.random() * (max - min)) + min);
-  }
-
-  console.log(setNumber);
-
-  let pares = setNumber.filter((x) => x % 2 == 0);
-
-  let counter = 0;
-  pares.sort(function (value1, value2) {
-    counter++;
-    return value2 - value1;
-  });
-  console.log(`Los números pares son: ${pares}`);
-}
-ejercicio7_3() */
+ */
