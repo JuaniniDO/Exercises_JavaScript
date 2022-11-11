@@ -22,8 +22,9 @@ for (let index = 0; index < split.length; index++) {
 };
 exercise3();
  */
-//Ejercicio 4
-/* function exercise4(temperature) {
+//Ejercicio 4. Escribe un programa con 7 variables con la temperatura de los 7 últimos días (Google). A
+// continuación, muestra cuál ha sido la temperatura media.
+function exercise4(temperature) {
   let i = 0,
     summ = 0,
     ArrayLen = temperature.length;
@@ -36,7 +37,7 @@ let temperature = [25, 29, 27, 24, 28, 29, 30];
 let temperatureAverage = exercise4(temperature);
 console.log("La temperatura media fue de: " + temperatureAverage);
 
-exercise4(temperature); */
+exercise4(temperature);
 
 //Ejercicio 8: Investigando como obtener caracteres a partir de valores ASCII, vamos a crear un generador de
 //contraseñas.
@@ -52,7 +53,7 @@ exercise4(temperature); */
 //En una función que devuelva números enteros aleatorios, y reciba 2 parámetros.
 //La contraseña generada debe ser mostrada con alert().
 
-let numeros = "0123456789";
+/* let numeros = "0123456789";
 let letras = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
 let simbolos = "!# $ % & ' ( ) * + , - . / : ; < = > ? @ [  ] ^ _` { | } ~";
 let todo = numeros + letras + simbolos;
@@ -67,7 +68,8 @@ const generatePassword = (longitud) => {
   }
   return password;
 };
-console.log(generatePassword(8,16));
+console.log(generatePassword(8,16)); */
+
 // Ejercicios logaritmo 3
 //Ejercicio 1
 /* function exercise31() {
