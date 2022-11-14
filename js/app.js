@@ -41,6 +41,8 @@
 // console.log(restObject); */
 // /* let {powers: {skills:[judo]}} = hero
 // console.log(judo); */
+
+// localStorage
 // let person = {
 //   id: 1,
 //   firstName: "John",
@@ -51,12 +53,98 @@
 // console.log(typeof jsonText);
 // let anotherPerson = JSON.parse(jsonText);
 // console.log(anotherPerson.lastName);
-let userName = prompt("What your name?")
-let phone = prompt("What your number phone?")
-localStorage.name = userName
-localStorage.phone = phone
 
-console.log(localStorage.name);
-console.log(localStorage.phone);
+// let userName = prompt("What your name?");
+// let phone = prompt("What your number phone?");
+// localStorage.name = userName
+// localStorage.phone = phone
 
-localStorage.clear();
+// console.log(localStorage.name);
+// console.log(localStorage.phone);
+
+// localStorage.clear();
+
+// let data = {
+//   userName,
+//   phone,
+// };
+// localStorage.data = JSON.stringify(data)
+// console.log(JSON.parse(localStorage.data));
+
+// let token =
+//   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c2";
+// localStorage.setItem("token", token);
+// console.log(localStorage.getItem("token"));
+// localStorage.removeItem("token");
+// console.log(localStorage.getItem("token"));
+// let date = new Date().toString();
+// localStorage.date = date;
+// console.log(new Date(Date.parse(localStorage.date)));
+
+// date = new Date();
+// let loginTime =
+//   date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+// sessionStorage.setItem("logedAt", loginTime)
+// console.log(sessionStorage.getItem("logedAt"));
+
+//JavaScript Asincrono
+// const sayHello = (userName) => {
+//   console.log("Hello " + userName);
+// };
+// const getUserName = (callback) => {
+//   let userName = prompt("Please, enter your name:");
+//   callback(userName);
+// };
+// // getUserName(sayHello);
+
+// let countDown = () => {
+//   console.log("Are you ready?");
+//   let start = 0;
+//   let end = 0;
+//   for (let index = 5, count = 1 ; index >= 0; index--, count++) {
+//     start = new Date().getTime()
+//     console.log(start);
+//     setTimeout( ()=>{
+//         end = new Date().getTime()
+//         console.log(index == 0 ? "Go!": index); //Operador ternario (?), equivalente a un if else
+//         console.log(count);
+//         console.log(end - start, " ms");
+//     }, count * 1000)
+//   }
+// };
+// countDown();
+// console.log("Steady");
+
+let countDownHell = () => {
+  let start = 5;
+  setTimeout(() => {
+    console.log(start--);
+    setTimeout(() => {
+      console.log(start--);
+      setTimeout(() => {
+        console.log(start--);
+        setTimeout(() => {
+          console.log(start--);
+          setTimeout(() => {
+            console.log(start--);
+            setTimeout(() => {
+              console.log("Running!");
+            }, 1000);
+          }, 1000);
+        }, 1000);
+      }, 1000);
+    }, 1000);
+  }, 1000);
+};
+// countDownHell();
+
+let doingSomething = (done) => {
+  new Promise((resolve, reject) => {
+    if (done) {
+      resolve(console.log("Success"));
+    } else {
+      reject(err.message);
+    }
+  });
+};
+doingSomething(true)
