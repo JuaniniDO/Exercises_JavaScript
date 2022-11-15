@@ -101,21 +101,53 @@
 //   console.log("Are you ready?");
 //   let start = 0;
 //   let end = 0;
-//   for (let index = 5, count = 1 ; index >= 0; index--, count++) {
-//     start = new Date().getTime()
+//   let count = 3;
+//   for (let index = 5; index >= 0; index--, count++) {
+//     //   for (let index = 5, count = 1; index >= 0; index--, count++) {
+//     start = new Date().getTime();
 //     console.log(start);
-//     setTimeout( ()=>{
-//         end = new Date().getTime()
-//         console.log(index == 0 ? "Go!": index); //Operador ternario (?), equivalente a un if else
-//         console.log(count);
-//         console.log(end - start, " ms");
-//     }, count * 1000)
+//     setTimeout(() => {
+//       end = new Date().getTime();
+//       console.log(index == 0 ? "Go!" : index);
+//       console.log(count);
+//       console.log(end - start, " ms");
+//     }, count * 1000);
 //   }
 // };
 // countDown();
 // console.log("Steady");
+// let time1 = 1,
+//   time2 = 2;
+// setTimeout(() => {
+//   let name = "Fran";
+//   console.log(`Hello ${name}`);
+// }, time1 * 1000);
+// setTimeout(() => {
+//   let name = "Nacho";
+//   console.log(`Hello ${name}`);
+// }, time1++ * 1000);
+// setTimeout(() => {
+//   let name = "Nacho";
+//   console.log(`Hello ${name}`);
+// }, time1++ * 1000);
+// setTimeout(() => {
+//   let name = "Nacho";
+//   console.log(`Hello ${name}`);
+// }, time1++ * 1000);
+// setTimeout(() => {
+//   let name = "Nacho";
+//   console.log(`Hello ${name}`);
+// }, time1++ * 1000);
+// setTimeout(() => {
+//   let name = "Nacho";
+//   console.log(`Hello ${name}`);
+// }, time1++ * 1000);
+// setTimeout(() => {
+//   let name = "Nacho";
+//   console.log(`Hello ${name}`);
+// }, time1++ * 1000);
 
-let countDownHell = () => {
+/* let countDownHell = () => {
   let start = 5;
   setTimeout(() => {
     console.log(start--);
@@ -147,4 +179,152 @@ let doingSomething = (done) => {
     }
   });
 };
-doingSomething(true)
+doingSomething(false)  */
+
+// const onResolved = (id) => {
+//   setTimeout(console.log, 0, id, "resolved");
+// };
+// const onRejected = (id) => {
+//   setTimeout(console.log, 0, id, "rejected");
+// };
+
+// let promise = fetch("/API/movies"); //Una promesa es un objeto
+// let promise2 = promise.then(onResolved);
+// let promise3 = promise2.then(onResolved);
+
+// let promise1 = new Promise((resolve, reject) => {
+//   setTimeout(resolve, 1000);
+// });
+// let promise2 = new Promise((resolve, reject) => {
+//   setTimeout(reject, 2000);
+// });
+
+// promise1.then(
+//   () => onResolved("promise1"),
+//   () => onRejected("promise1")
+// );
+// promise2.then(
+//   () => onResolved("promise2"),  //El metodo THEN une procesos
+//   () => onRejected("promise2")
+// );
+
+// let promise = new Promise((resolve, reject) => {
+//   setTimeout(reject(new Error("catching the error")), 1000);
+// });
+// promise
+//   .then(() => {
+//     alert("promise solved");
+//   })
+//   .catch((error) => console.log(error.message));
+
+// async / await
+// async function getNumber(number) { //FUNCION LITERAL
+//   console.log(number);
+// };
+// const getNumber = async function(number){ //FUNCION ANONIMA
+//   console.log(number);
+// };
+// const getNumber = async(number) =>{         ///FUNCION FLECHA
+//   console.log(number);
+//   return 3;
+// };
+// getNumber(1).then(console.log);
+// console.log(2);
+//Forma similar a la anterior
+// const getNumber = async (number) =>{         ///FUNCION FLECHA
+//   console.log(number);
+//   await Promise.reject(3);
+// };
+// getNumber(1).catch(console.log);
+// console.log(2);
+
+// const count = async()=>{
+//   console.log(2);
+//   await null;
+//   console.log(4);
+// }
+// console.log(1);
+// count();
+// console.log(3);
+
+window.addEventListener("load", () => {
+  //Sitio web JSON Server
+  //https://jsonplaceholder.typicode.com/
+  //obtener todos los post
+  //https://jsonplaceholder.typicode.com/posts
+  let URL = "https://jsonplaceholder.typicode.com/posts";
+  // fetch(URL)
+  //   .then((response) => response.json())
+  //   .then((json) => console.log("trying GET: ", json));
+  //obtener un post especÃ­fico
+  // fetch(URL + "/2")
+  //   .then((response) => response.json())
+  //   .then((json) => console.log("trying GET: ", json));
+  // //insertar un nuevo post
+  // fetch(URL, {
+  //   method: "POST",
+  //   body: JSON.stringify({
+  //     title: "foo",
+  //     body: "bar",
+  //     userId: 1,
+  //   }),
+  //   headers: {
+  //     "Content-type": "application/json; charset=UTF-8",
+  //   },
+  // })
+  //   .then((response) => response.json())
+  //   .then((json) => console.log("trying POST: ", json));
+
+  // //actualizar un post
+  // fetch(URL + "/2", {
+  //   method: "PUT",
+  //   body: JSON.stringify({
+  //     id: 2,
+  //     title: "foo",
+  //     body: "bar",
+  //     userId: 1,
+  //   }),
+  //   headers: {
+  //     "Content-type": "application/json; charset=UTF-8",
+  //   },
+  // })
+  //   .then((response) => response.json())
+  //   .then((json) => console.log("trying PUT: ", json));
+
+  // //ELIMINAR un post
+  // fetch(URL + "/2", {
+  //   method: "DELETE",
+  // })
+  //   .then((response) => response.json())
+  //   .then((json) => console.log("trying DELETE: ", json));
+  //profundizando en el objeto de respuesta
+  // fetch(URL + "/1")
+  //   .then((response) => {
+  //     console.log(response);
+  //     console.log(response.status);
+  //     console.log(response.statusText);
+  //     console.log(response.ok);
+  //     // response.json();
+  //     // forma alternativa
+  //     response.text().then((data)=>{
+  //       console.log(JSON.parse(data));
+  //     })
+  //   })
+  // .then((json) => console.log("trying GET: ", json));
+  fetch(URL + "/1")
+    .then((response) => {
+      if (
+        response.ok &&
+        response.headers.get("Content-type") ===
+          "application/json; charset=utf-8"
+      ) {
+        return response.json();
+      } else {
+        console.log(response.headers.get("Content-type"));
+        throw new Error(`Unexpected status ${response.status} content type`);
+      }
+    })
+    .then((data) => console.log(data))
+    .catch((error) => console.log(error));
+});
+
